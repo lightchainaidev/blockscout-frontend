@@ -20,6 +20,15 @@ Alternatively, you can build your own docker image and run your app from that. P
 
 For more information on migrating from the previous frontend, please see the [frontend migration docs](https://docs.blockscout.com/for-developers/frontend-migration).
 
+## Running and configuring the app locally
+
+create .env.local file 
+
+```sh
+yarn isntall
+yarn dev
+```
+
 ## Contributing
 
 See our [Contribution guide](./docs/CONTRIBUTING.md) for pull request protocol. We expect contributors to follow our [code of conduct](./CODE_OF_CONDUCT.md) when submitting code or comments.

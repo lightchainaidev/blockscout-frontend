@@ -336,7 +336,8 @@ const Footer = () => {
             `,
               }}
               className="footer-wrapper"
-              pt={{ base: 10, lg: 10 }}
+              pt={{ base: 20, lg: 20 }}
+              pb={{ base: 20, lg: 20 }}
             >
               { renderNetworkInfo({ lg: 'network' }) }
               { renderProjectInfo({ lg: 'info' }) }

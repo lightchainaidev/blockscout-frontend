@@ -1,0 +1,21 @@
+.gas-price-box {
+    border-color: #7064e940 !important;
+
+    .gas-price-box-item {
+        background-color: var(--card-bg);
+        border-bottom: 0;
+        border-color: #7064e940;
+        &:first-child{
+            background-color: transparent !important;
+        }
+    }
+}
+
+.gas-icons {
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}

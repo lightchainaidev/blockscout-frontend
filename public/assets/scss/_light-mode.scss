@@ -1,0 +1,81 @@
+// Light Mode 
+body {
+    &.lcai-body {
+        &.chakra-ui-light {
+
+            --color-heading: #181818;
+            --color-body: #65676b;
+            --card-bg-2: #f7fafc;
+            --color-dark-3: #eff3f5;
+            --chakra-colors-gray-800: #eff3f5;
+            --card-bg: #eff3f5;
+            --chakra-colors-black: #ffffff;
+
+            .lcai-counterup-wrapper .single-counter:after {
+                background: #f5f8fa;
+            }
+
+            .lcai-counterup-wrapper .single-counter .icon:after {
+                background: linear-gradient(135deg, var(--color-dark-3) -8.77%, var(--color-dark-3) 106.24%);
+            }
+
+            .lcai-table-default .chakra-table tbody .chakra-alert {
+                background: #edf6b850;
+            }
+
+            .banner-img .for-light {
+                display: block;
+            }
+
+            .banner-img .for-dark {
+                display: none;
+            }
+
+            .lcai-update-header-wrapper .top-shape-thumbnail .for-dark,
+            .lsb-newsletter-main .logo a .for-dark {
+                display: none;
+            }
+
+            .lcai-update-header-wrapper .top-shape-thumbnail .for-light,
+            .lsb-newsletter-main .logo a .for-light {
+                display: block;
+            }
+
+            .countdown-wrapper {
+                background: #f5f8fa;
+            }
+
+            .lsb-newsletter-separator {
+                .for-dark {
+                    display: none;
+                }
+
+                .for-light {
+                    display: block;
+                }
+            }
+
+            .chakra-alert.lcai-testnet-transection {
+                background: #7064e9;
+            }
+
+            .mainmenu-nav li .css-1by1pod {
+                background-color: transparent;
+            }
+
+            .filter-type {
+                &-span {
+                    color: rgba(255, 255, 255, 0.80) !important;
+                }
+            }
+
+            .banner-searchbar {
+
+                &::placeholder {
+                    color: var(--color-body) !important;
+                }
+            }
+        }
+
+    }
+}

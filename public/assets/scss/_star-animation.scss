@@ -1,0 +1,105 @@
+/*--------------------------
+    Star Animation Style
+----------------------------*/
+
+@use 'sass:math';
+@use 'sass:string';
+
+@function multiple-box-shadow($n) {
+  $value: "#{math.random(2000)}px #{math.random(2000)}px rgba(115, 118, 170, 0.60)";
+
+  @for $i from 2 through $n {
+    $value: "#{$value}, #{math.random(2000)}px #{math.random(2000)}px rgba(115, 118, 170, 0.60)";
+  }
+
+  @return string.unquote($value);
+}
+
+$shadows-small: multiple-box-shadow(700);
+$shadows-medium: multiple-box-shadow(200);
+$shadows-big: multiple-box-shadow(100);
+
+.lsb-stars-area {
+  height: 390px;
+  overflow: hidden;
+  width: 725px;
+  position: absolute;
+  top: 90px;
+  transform: translateX(50%);
+
+  // @media #{$smlg-device} {
+  @media screen and (max-width: 1199px) {
+    width: 100% !important;
+    min-width: 150px;
+  }
+}
+
+.lsb-stars {
+  width: 1.03px;
+  height: 1.03px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 50s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1.03px;
+    height: 1.03px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+
+.lsb-stars2 {
+  width: 2.13px;
+  height: 2.13px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 100s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2.13px;
+    height: 2.13px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}
+
+.lsb-stars3 {
+  width: 1.6px;
+  height: 1.6px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 150s linear infinite;
+
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1.6px;
+    height: 1.6px;
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
+
+@keyframes animStar {
+  from {
+    transform: translateY(0px);
+  }
+
+  to {
+    transform: translateY(-2000px);
+  }
+}

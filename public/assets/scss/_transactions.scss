@@ -1,0 +1,71 @@
+.banner-transaction {
+    margin: 0;
+    .banner-content {
+        position: relative;
+        .banner-search {
+            position: relative;
+            max-width: 100% !important;
+            input {
+                height: 50px;
+                border-radius: 10px !important;
+                font-size: 16px;
+                font-weight: 400;
+                background: var(--color-dark-3) !important;
+                color: var(--color-body) !important;
+            }
+            .css-80g4r1 {
+                left: inherit;
+                right: 0;
+            }
+        }
+    }
+}
+
+.transaction-btn-connect {
+    height: 40px !important;
+    min-width: 90px !important;
+    width: 20px;
+    border: 2px solid #7064e940 !important;
+    border-radius: 10px;
+
+    &:hover {
+        color: var(--color-white) !important;
+        background-color: #7064e940;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .transaction-btn-connect {
+        height: 50px !important;
+        min-width: 120px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .transaction-btn-connect {
+        height: 45px !important;
+        min-width: 100px !important;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .transaction-btn-connect {
+        height: 50px !important;
+    }
+}
+
+.lcai-update-header-wrapper .transaction-btn-connect {
+    height: 42px !important;
+    width: auto;
+}
+
+.lcai-update-header-wrapper .transaction-btn-connect.css-s0fcsj[data-selected=true] {
+    background: transparent;
+    color: var(--color-heading);
+}
+
+
+
+
+
+

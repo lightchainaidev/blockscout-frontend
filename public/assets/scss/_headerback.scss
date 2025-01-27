@@ -1,0 +1,77 @@
+
+
+// Header Top Bar 
+.lcai-update-header-wrapper {
+    position: relative;
+    padding-bottom: 0;
+    margin-bottom: 10px;
+
+    .top-shape-thumbnail {
+        position: absolute;
+        top: 79%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        .for-dark {
+            display: block;
+        }
+        .for-light {
+            display: none;
+        }
+    }
+}
+header {
+    @media screen and (min-width: 1440px) {
+        .css-qgo69j {
+            width: auto;
+            height: auto;
+        }
+    }
+    .chakra-image {
+        max-height: 40px;
+        min-height: 40px;
+    }
+}
+// Header Style Start 
+.mainmenu-nav {
+    .css-1129k9b {
+        padding-right: 28px;
+    }
+    .css-1ewbfg0 {
+        right: 0;
+    }
+    .lcai-nav-item {
+        .css-yk6pw9 {
+            background-color: transparent;
+        }
+        p ,
+        svg {
+            color: var(--color-heading);
+        }
+    }
+}
+.mainmenu-nav {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.mainmenu-nav .lcai-nav-item .chakra-text {
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+.mainmenu-nav .lcai-nav-item .chakra-stack {
+    display: flex;
+    align-items: center;
+}
+.mainmenu-nav li {
+    margin: 0 10px;
+    text-transform: capitalize;
+}
+
+
+.transaction-btn-connect {
+    &.css-1oo8ztr[data-selected=true] {
+        width: auto;
+    }
+}

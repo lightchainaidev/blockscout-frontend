@@ -1,0 +1,32 @@
+:root {
+    //Themes colors
+    --color-primary: #7064E9;
+    --color-primary-alt: #3120df;
+    --color-white: #ffffff;
+    --color-heading: #CCCEEF;
+    --color-body: #7376AA;
+    --color-border: #7064E924;
+    --color-border-2: #ffffff10;
+    --radius: 10px;
+    --card-bg: rgb(15, 16, 33);
+    --card-bg-2: #0F1021;
+    --color-border-opacity-5: rgba(111, 100, 233, 0.10);
+    --color-dark-3: #14152C;
+    --box-shadow-1: inset 2px 4px 12.6px rgba(6, 6, 14, 0.8), inset 6px -4px 9.1px rgba(6, 6, 14, 0.22);
+    --box-shadow-2: 0px 2px 21.3px #070710;
+    --border-width: 2px;
+    --color-border-opacity-2: rgba(112, 100, 233, 0.2);
+    --chakra-colors-black: #06060E;
+}
+
+// Layouts Variation
+$smlg-device: 'only screen and (max-width: 1199px)';
+$lgtolp-device: 'only screen and (min-width: 1200px)';
+$extra-device: 'only screen and (min-width: 1600px) and (max-width: 1919px)';
+$laptop-device: 'only screen and (min-width: 1200px) and (max-width: 1599px)';
+$lg-layout: 'only screen and (min-width: 992px) and (max-width: 1199px)';
+$md-layout:'only screen and (min-width: 768px) and (max-width: 991px)';
+$sm-layout:'only screen and (max-width: 767px)';
+$large-mobile: 'only screen and (max-width: 575px)';
+$small-mobile: 'only screen and (max-width: 479px)';
+

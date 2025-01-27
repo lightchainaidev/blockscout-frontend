@@ -1,0 +1,210 @@
+/* banner start */
+
+.lcai-banner-area {
+    position: relative;
+    padding-bottom: 80px;
+    overflow: hidden;
+    background: var(--chakra-colors-black);
+    @media screen and (min-width: 576px) {
+        padding-bottom: 100px;
+    }
+    @media screen and (min-width: 768px) {
+        padding-bottom: 200px;
+    }
+    .top-shape-thumbnail {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .banner-content {
+        position: relative;
+        .banner-search {
+            position: relative;
+            @media #{$md-layout} {
+                padding-left: 30px;
+                padding-right: 30px;
+            }
+            @media #{$sm-layout} {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            input {
+                height: 60px;
+                border-radius: 100px !important;
+                font-size: 16px;
+                font-weight: 400;
+                background: var(--color-dark-3) !important;
+                color: var(--color-body) !important;
+                padding-left: 50px;
+            }
+            @media screen and (max-width: 999px) {
+                .css-1ldqtjq {
+                    padding-left: 20px;
+                }
+            }
+            .css-80g4r1 {
+                left: inherit;
+                right: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .banner-search {
+        .css-80g4r1 {
+            width: var(--chakra-sizes-6);
+          
+        }
+
+        .css-1ldqtjq {
+            padding-left: 30px;
+        }
+    }
+
+}
+
+@media screen and (min-width: 1001px) {
+    .banner-search {
+        .css-1ldqtjq {
+            padding-right: 50px;
+        }
+    }
+
+}
+
+// .chakra-container {
+//     padding-left: 0 !important;
+//     padding-right: 0 !important;
+// }
+
+.banner {
+    // position: relative;
+    padding-top: 80px;
+    margin-top: 0px; 
+}
+
+.banner-img {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 576px) {
+        top: 100px;
+    }
+
+    .for-light {
+        display: none;
+    }
+
+    .for-dark {
+        display: block;
+    }
+
+    img {
+        @media screen and (max-width: 576px) {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    }
+
+}
+
+.banner-title {
+    position: relative;
+    z-index: 99;
+    font-family: Inter, serif !important;
+    font-weight: 600 !important;
+
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+
+    top: -3rem;
+
+    @media screen and (min-width: 576px) {
+        top: 0;
+    }
+
+    img {
+        max-width: 64px;
+        max-height: 64px;
+        @media #{$sm-layout} {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
+
+.login-btn {
+    background-color: var(--color-primary) !important;
+}
+
+.banner-search {
+    border-radius: 100px !important;
+    // top: 0px !important;
+    left: 0px !important;
+
+    @media screen and (min-width: 576px) {
+        top: 40px !important;
+        left: 0px !important;
+    }
+
+    @media screen and (min-width: 768px) {
+        top: 70px !important;
+        left: 0px !important;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+        top: 0px !important;
+        left: unset !important;
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(90deg, #4106FA 49.35%, #EE11FB 94.1%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.banner-searchbar {
+    color: white !important;
+    border-radius: 100px;
+    border: 2px solid rgba(112, 100, 233, 0.10) !important;
+
+    // &::placeholder {
+    //     color: var(--color-heading) !important;
+    // }
+}
+
+
+// .lcai-body {
+//     background-color: var(--chakra-colors-black);
+
+//     .css-p9xxwu {
+//         padding-bottom: 0;
+//         background-color: var(--chakra-colors-black);
+
+//     }
+// }
+
+
+form.banner-search.css-jst94c {
+    position: relative;
+}

@@ -1,0 +1,94 @@
+
+// Latest Block Sidebar Area 
+
+@media screen and (min-width: 1000px) {
+    .css-kk2gsb {
+        min-height: inherit;
+    }
+}
+
+.lcai-block-with-sidebar {
+    column-gap: 24px;
+    margin-top: 24px;
+    row-gap: 24px;
+    .css-i9gxme {
+        flex-basis: 66.66%;
+    }
+}
+
+// Sidebar 
+.lcai-sidebar-wrapper {
+    border-radius: var(--radius);
+    flex-basis: 33.33%;
+    background: var(--card-bg-2);
+    overflow: hidden;
+    .css-hcgmm8 {
+        width: 100%;
+    }
+    .lcai-top-section-title {
+        
+        .subtitle span {
+            color: var(--color-body);
+        }
+        .subtitle {
+            margin-top: 4px;
+        }
+    }
+    .lcai-blocks-card-wrapper {
+        padding: 16px;
+        margin-top: 0;
+    }
+    .lcai-single-block {
+        @extend .lcai-card-hover;
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--radius);
+        z-index: 2;
+        background-color: var(--color-border);
+        border: 0 none;
+        padding: 20px 25px;
+        &::after {
+            background: var(--color-dark-3);
+        }
+        .lcai-blocks-link {
+            a {
+                color: var(--color-heading);
+                font-size: 24px;
+                span {
+                    color: var(--color-heading);
+                    font-size: 24px;
+                }
+            }
+        }
+        .lcai-block-table {
+            display: flex !important;
+            flex-direction: column;
+            gap: 0 !important;
+            .list-item {
+                display: flex;
+                width: 100% !important;
+                justify-content: space-between;
+                padding: 5px 0;
+                & + .list-item {
+                    border-top: 1px solid var(--color-border);
+                    margin: 0 !important;
+                }
+                .list-title {
+                    color: var(--color-body);
+                }
+            }
+        }
+    
+    }
+}
+
+
+// Lcai Top Section Title 
+.lcai-top-section-title {
+    background: var(--color-dark-3);
+    padding: 24px;
+}
+
+
+
+

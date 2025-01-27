@@ -1,0 +1,31 @@
+.contract-input {
+    margin: 0;
+    border: 2px solid #7064e930 !important;
+    border-radius: 8px;
+
+    &.css-12ygsm9 {
+        input {
+            border-color: transparent !important;
+
+            &:hover {
+                border-color: var(--chakra-colors-gray-500) !important;
+            }
+
+            &:focus {
+                border-color: var(--color-primary) !important;
+            }
+        }
+    }
+
+    .css-yr2h93 {
+        border-color: transparent;
+    }
+
+    .css-1u6tbud[aria-invalid=true],
+    .css-1u6tbud[data-invalid] {
+        border-color: var(--chakra-colors-red-500) !important;
+        box-shadow: var(--chakra-shadows-none) !important;
+        color: var(--chakra-colors-gray-50) !important;
+        background-color: var(--chakra-colors-black) !important;
+    }
+}

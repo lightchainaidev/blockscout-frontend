@@ -1,0 +1,214 @@
+html {
+    // font-size: 16px;
+}
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    &.lcai-body {
+        // heading
+        --chakra-colors-whiteAlpha-800: #CCCEEF;
+        // body
+        --chakra-colors-whiteAlpha-900: #7376AA;
+
+        .css-1pv7abf {
+            background: var(--chakra-colors-blue-400);
+        }
+    }
+}
+
+
+
+
+body {
+    &.lcai-body {
+        font-family: "Inter", serif;
+        color: var(--color-body);
+        font-weight: 400;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        background: var(--chakra-colors-black);
+    }
+    .chakra-heading {
+        color: var(--color-heading);
+    }
+}
+.clr-body{
+    color: var(--color-body) !important;
+}
+
+.lcai-section-gapBottom {
+    padding-bottom: 80px;
+}
+
+.lcai-section-gapTop {
+    padding-top: 80px;
+}
+
+.lcai-section-gap {
+    padding: 80px 0; 
+}
+
+.color-primary{ 
+    color: var(--color-primary) !important;
+}
+.color-heading{ 
+    color: var(--color-heading) !important;
+}
+.color-body{ 
+    color: var(--color-body) !important;
+}
+
+
+.lcai-badge {
+    border: 1px solid var(--color-border);
+    font-size: 14px;
+    line-height: 15px;
+    font-weight: 500;
+    color: var(--color-body);
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 100px;
+    display: inline-block;
+    background: none;
+    span {
+        font-size: 14px;
+        color: var(--color-body);
+        font-weight: 500;
+    }
+}
+
+.lcai-card-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--color-border);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-right: 10px;
+    & > div {
+        margin-right: 0;
+    }
+}
+
+.lcai-transactions-icon {
+    button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid var(--color-border);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-right: 10px;
+        @media #{$sm-layout} {
+            width: auto;
+            height: auto;
+            border: 0;
+        }
+        svg {
+            color: var(--color-body);
+        }
+    }
+}
+.lcai-alert-default{
+    background: var(--color-primary-alt) !important;
+}
+.lcai-alert-default{
+    color: var(--color-white);
+    span {
+        color: var(--color-white);
+    }
+}
+
+.lcai-tab[data-selected="true"] {
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    span {
+        color: var(--color-white);
+    }
+}
+
+.lcai-pagination button {
+    border-color: var(--color-border);
+}
+
+.lcai-pagination button:disabled, .lcai-pagination button[disabled], [aria-disabled=true], [data-disabled] {
+    opacity: 0.5;
+}
+
+.lcai-pagination button[data-selected=true], .lcai-pagination button[data-selected=true][aria-selected=true] {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+
+}
+
+
+
+// Default Card Hover Style 
+.lcai-card-hover {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--radius);
+    z-index: 2;
+    background-color: var(--color-border);
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        background: radial-gradient(var(--color-primary), transparent, transparent);
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+        transition: .5s, top 0s, left 0s;
+        border-radius: var(--radius);
+        z-index: -1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        border-radius: var(--radius);
+        z-index: -1;
+        background: var(--card-bg);
+    }
+
+    &:hover {
+       &::before {
+            opacity: 1;
+       } 
+    }
+}
+
+
+.chakra-alert.lcai-testnet-transection {
+    background: #7064e950;
+    color: var(--color-white);
+}
+
+
+
+.lcai-filter-input .chakra-input{
+    border-color: var(--color-border) !important;
+    &:focus-visible, 
+    &[data-focus-visible] {
+        border-color: var(--color-primary) !important;
+    }
+}
+
+// Resposnive css
+
+@media #{$sm-layout} {
+    .css-hxynd0,
+    .css-hriwax ,
+    .css-1lbf24c {
+        flex-wrap: wrap;
+    }
+    .css-ftybhd {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}

@@ -1,0 +1,75 @@
+.mainmenu-nav {
+    .chakra-link.nav-links {
+        transition: all 0.6s !important;
+        border-radius: 4px !important;
+
+        &:hover {
+            color: var(--chakra-colors-primary-100) !important;
+            background-color: var(--chakra-colors-gray-800) !important;
+            transition: all 0.6s !important;
+        }
+    }
+}
+
+.css-1fpn409 {
+    padding: 0 0 0 0px !important;
+}
+
+.chakra-link.nav-links.css-1hlndol.css-1hlndol {
+    background-color: transparent !important;
+    color: var(--color-heading);
+    margin: 0 0 0 8px;
+    transition: all 0.3s !important;
+
+    &:hover {
+        transition: all 0.3s !important;
+        background-color: transparent !important;
+    }
+
+    @media screen and (min-width: 992px) {
+        margin: auto;
+    }
+
+    .chakra-text.css-1s2gdd2 {
+        padding: 0 0 0 14px;
+
+        @media screen and (min-width: 992px) {
+            padding: 0 0 0 8px;
+        }
+    }
+}
+
+
+
+.dropdown-item {
+    margin: 0;
+
+    .nav-links {
+        padding: 8px;
+    }
+}
+
+.dropdown-link {
+    font-size: 14px;
+}
+
+.dropdown-icon {
+    color: var(--color-body);
+}
+
+.mobile-menu {
+    margin-left: 0 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

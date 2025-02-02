@@ -1,5 +1,4 @@
-import { Flex, Box, VStack, Container } from '@chakra-ui/react';
-import Image from 'next/image';
+import { Flex, Box, VStack, Container, Image } from '@chakra-ui/react';
 import React from 'react';
 
 import config from 'configs/app';

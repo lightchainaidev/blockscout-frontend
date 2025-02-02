@@ -27,8 +27,8 @@ import IconSvg from 'ui/shared/IconSvg';
 import { CONTENT_MAX_WIDTH } from 'ui/shared/layout/utils';
 import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
-import bgShape from '../../../public/assets/images/shape/footer-shape-1.png';
-import bgShape2 from '../../../public/assets/images/shape/footer-shape-2.png';
+// import bgShape from '../../../assets/images/shape/footer-shape-1.png';
+// import bgShape2 from '../../../assets/images/shape/footer-shape-2.png';
 import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
 import getApiVersionUrl from './utils/getApiVersionUrl';
@@ -311,7 +311,7 @@ const Footer = () => {
             <div className="lsb-newsletter-shape-wrap">
               <div className="shape-bg">
                 <Image
-                  src={ bgShape }
+                  src="/assets/images/shape/footer-shape-1.png"
                   width={ 634 }
                   height={ 210 }
                   alt="Shape"
@@ -319,7 +319,7 @@ const Footer = () => {
               </div>
               <div className="shape-2">
                 <Image
-                  src={ bgShape2 }
+                  src="/assets/images/shape/footer-shape-2.png"
                   width={ 634 }
                   height={ 350 }
                   alt="Shape"

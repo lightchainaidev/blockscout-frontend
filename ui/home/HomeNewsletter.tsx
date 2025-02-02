@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import React from 'react';
 
-import separatorLight from '../../public/assets/images/banner/separator-bottom-light.svg';
-import separator from '../../public/assets/images/banner/separator-bottom.svg';
-// import logoLight from '../../public/assets/images/logo/network_logo_dark.svg';
-// import logoDark from '../../public/assets/images/logo/network_logo.svg';
+// import separatorLight from '../../assets/images/banner/separator-bottom-light.svg';
+// import separator from '../../assets/images/banner/separator-bottom.svg';
+// import logoLight from '../../assets/images/logo/network_logo_dark.svg';
+// import logoDark from '../../assets/images/logo/network_logo.svg';
 
 function HomeNewsletter() {
   // const [ email, setEmail ] = useState('');
@@ -32,14 +32,14 @@ function HomeNewsletter() {
     <div className="lightscan-newsletter">
       <div className="lsb-newsletter-separator">
         <Image
-          src={ separator }
+          src="/assets/images/banner/separator-bottom.svg"
           width={ 1920 }
           height={ 98 }
           alt="Separator"
           className="for-dark w-100"
         />
         <Image
-          src={ separatorLight }
+          src="/assets/images/banner/separator-bottom-light.svg"
           width={ 1920 }
           height={ 98 }
           alt="Separator"

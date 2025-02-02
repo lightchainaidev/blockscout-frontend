@@ -1,7 +1,6 @@
 import { Box, Container } from '@chakra-ui/react';
 import React from 'react';
 
-import '../../../public/assets/scss/style.scss';
 import type { Props } from './types';
 
 import AppErrorBoundary from 'ui/shared/AppError/AppErrorBoundary';

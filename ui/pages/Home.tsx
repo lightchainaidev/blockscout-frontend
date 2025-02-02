@@ -1,6 +1,5 @@
 import { Box, Container, Flex } from '@chakra-ui/react';
 import React from 'react';
-// import '../../public/assets/scss/style.scss';
 
 import config from 'configs/app';
 import ChainIndicators from 'ui/home/indicators/ChainIndicators';

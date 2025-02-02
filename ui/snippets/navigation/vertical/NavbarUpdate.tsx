@@ -14,8 +14,8 @@ import TopBarStats from 'ui/snippets/topBar/TopBarStats';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
 import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
 
-import bannerTopImagesLight from '../../../../public/assets/images/banner/separator-top-light.svg';
-import bannerTopImages from '../../../../public/assets/images/banner/separator-top.svg';
+// import bannerTopImagesLight from '../../../../assets/images/banner/separator-top-light.svg';
+// import bannerTopImages from '../../../../assets/images/banner/separator-top.svg';
 import NavLink from './NavLink';
 import NavLinkGroup from './NavLinkGroup';
 import NavLinkRewards from './NavLinkRewards';
@@ -127,10 +127,10 @@ const NavbarUpdate = () => {
           ) }
         </Flex>
         <div className="top-shape-thumbnail">
-          <Image className="for-dark" src={ bannerTopImages } alt="Shape image"/>
+          <Image className="for-dark" src="/assets/images/banner/separator-top.svg" alt="Shape image"/>
           <Image
             className="for-light"
-            src={ bannerTopImagesLight }
+            src="/assets/images/banner/separator-top-light.svg"
             alt="Shape image"
           />
         </div>

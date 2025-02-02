@@ -5,9 +5,9 @@ import React from 'react';
 import NavbarUpdate from 'ui/snippets/navigation/vertical/NavbarUpdate';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 
-import bannerImgLight from '../../public/assets/images/banner/banner-light-image-light.png';
-import bannerImg from '../../public/assets/images/banner/banner-light-image.png';
-import bannerSvg from '../../public/assets/images/banner/title-svg.png';
+// import bannerImgLight from '../../assets/images/banner/banner-light-image-light.png';
+// import bannerImg from '../../assets/images/banner/banner-light-image.png';
+// import bannerSvg from '../../assets/images/banner/title-svg.png';
 
 const HeroBanner = () => {
   return (
@@ -30,19 +30,19 @@ const HeroBanner = () => {
                 textAlign="center"
               >
                 Explore
-                <Image src={ bannerSvg } alt="banner image"/>
+                <Image src="/assets/images/banner/title-svg.png" alt="banner image"/>
                 <span className="text-gradient">LightScan</span>
                 Blockchain
               </Heading>
               <div className="banner-img">
                 <Image
                   className="for-dark"
-                  src={ bannerImg }
+                  src="/assets/images/banner/banner-light-image.png"
                   alt="banner image"
                 />
                 <Image
                   className="for-light"
-                  src={ bannerImgLight }
+                  src="/assets/images/banner/banner-light-image-light.png"
                   alt="banner image"
                 />
               </div>

@@ -165,18 +165,22 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
         ) }
       </DetailsInfoItem.Value>
 
-      <DetailsInfoItem.Label
-        hint="AI Inscription"
-        isLoading={ isLoading }
-      >
-        AI Inscription
-      </DetailsInfoItem.Label>
-      <DetailsInfoItem.Value>
-        { data.status === null && <Spinner mr={ 2 } size="sm" flexShrink={ 0 }/> }
-        <Skeleton isLoaded={ !isLoading } overflow="hidden">
-          <AiInscription inscription={ data.inscription }/>
-        </Skeleton>
-      </DetailsInfoItem.Value>
+      { data.inscription && (
+        <>
+          <DetailsInfoItem.Label
+            hint="AI Inscription"
+            isLoading={ isLoading }
+          >
+            AI Inscription
+          </DetailsInfoItem.Label>
+          <DetailsInfoItem.Value>
+            { data.status === null && <Spinner mr={ 2 } size="sm" flexShrink={ 0 }/> }
+            <Skeleton isLoaded={ !isLoading } overflow="hidden">
+              <AiInscription inscription={ data.inscription }/>
+            </Skeleton>
+          </DetailsInfoItem.Value>
+        </>
+      ) }
 
       <DetailsInfoItem.Label
         hint="Current transaction state: Success, Failed (Error), or Pending (In Process)"

@@ -38,23 +38,26 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
     >
       <Flex
         as="header"
-        paddingX={ 3 }
-        paddingY={ 2 }
+        paddingX={ 6 }
+        paddingY={ 4 }
         bgColor={ bgColor }
         width="100%"
         alignItems="center"
         transitionProperty="box-shadow"
         transitionDuration="slow"
         boxShadow={ !inView && scrollDirection === 'down' ? 'md' : 'none' }
+        className="lcai-mobile-inner"
       >
-        <Burger/>
+        <div className="lcai-humbergur">
+          <Burger/>
+        </div>
         <NetworkLogo ml={ 2 } mr="auto"/>
-        <Flex columnGap={ 2 }>
+        <Flex columnGap={ 2 } className="lcai-mobile-menu-button">
           { config.features.rewards.isEnabled && <RewardsButton/> }
           {
             (config.features.account.isEnabled && <UserProfileMobile/>) ||
-            (config.features.blockchainInteraction.isEnabled && <UserWalletMobile/>) ||
-            <Box boxSize={ 10 }/>
+              (config.features.blockchainInteraction.isEnabled && <UserWalletMobile/>) ||
+              <Box boxSize={ 10 }/>
           }
         </Flex>
       </Flex>
@@ -62,5 +65,4 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
     </Box>
   );
 };
-
 export default React.memo(HeaderMobile);

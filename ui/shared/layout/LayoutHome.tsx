@@ -12,7 +12,7 @@ import * as Layout from './components';
 
 const LayoutHome = ({ children }: Props) => {
   return (
-    <div>
+    <div className="lcai-main-home">
       { /* <Layout.TopRow/> */ }
       <HeaderMobile hideSearchBar/>
       <HeroBanner/>
@@ -26,9 +26,7 @@ const LayoutHome = ({ children }: Props) => {
           { /* <HeaderAlert/> */ }
         </Layout.MainArea>
         <div className="lcai-footer-main-area">
-          <Container maxWidth="1320px">
-            <Layout.Footer/>
-          </Container>
+          <Layout.Footer/>
         </div>
       </Layout.Container>
     </div>

@@ -9,8 +9,8 @@ const HeaderAlert = () => {
     <Container
       className="alert-container"
       maxWidth="1320px"
-      pt={{ base: 20, sm: 16, md: 12 }}
-      px={{ base: 0, lg: 4 }}
+      // pt={{ base: 20, sm: 16, md: 12 }}
+      // px={{ base: 0, lg: 4 }}
     >
       <Flex flexDir="column" rowGap={ 3 } mb={ 3 } _empty={{ display: 'none' }}>
         <MaintenanceAlert/>

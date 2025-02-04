@@ -305,7 +305,7 @@ const Footer = () => {
   return (
     <div className="lcai-footer-area">
       <div className="lcai-footer-wrapper">
-        <Container maxWidth="1320px">
+        <Container maxWidth="1320px" px="0">
           <Box { ...containerProps }>
             <HomeNewsletter/>
             <Box className="lcai-footer-top-section">
@@ -315,6 +315,7 @@ const Footer = () => {
               </Box>
               <div className="separator-animated animated-true mt--50 mb--50"></div>
             </Box>
+
             <div className="lsb-newsletter-shape-wrap">
               <div className="shape-bg">
                 <Image
@@ -333,6 +334,7 @@ const Footer = () => {
                 ></Image>
               </div>
             </div>
+
             <Box
               { ...contentProps }
               gridTemplateAreas={{

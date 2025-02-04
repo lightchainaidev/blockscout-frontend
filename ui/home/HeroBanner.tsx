@@ -11,7 +11,8 @@ import SearchBar from 'ui/snippets/searchBar/SearchBar';
 const HeroBanner = () => {
   return (
     <div>
-      <Box p={{ base: 4, lg: 8 }}>
+      { /* p={{ base: 4, lg: 8 }} */ }
+      <Box>
         <NavbarUpdate/>
       </Box>
       <Box className="lcai-banner-area">
@@ -30,8 +31,7 @@ const HeroBanner = () => {
               >
                 Explore
                 <Image src="/assets/images/banner/title-svg.png" alt="banner image"/>
-                <span className="text-gradient">LightScan</span>
-                Blockchain
+                <span className="text-gradient">Lightscan</span>
               </Heading>
               <div className="banner-img">
                 <Image

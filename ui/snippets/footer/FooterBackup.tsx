@@ -29,7 +29,6 @@ import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 // import bgShape from '../../../assets/images/shape/footer-shape-1.png';
 // import bgShape2 from '../../../assets/images/shape/footer-shape-2.png';
-import NetworkLogo from '../networkMenu/NetworkLogo';
 import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
 import getApiVersionUrl from './utils/getApiVersionUrl';
@@ -305,16 +304,10 @@ const Footer = () => {
   return (
     <div className="lcai-footer-area">
       <div className="lcai-footer-wrapper">
-        <Container maxWidth="1320px">
+        <Container maxWidth="1320px" px="0">
           <Box { ...containerProps }>
             <HomeNewsletter/>
-            <Box className="lcai-footer-top-section">
-              <NetworkLogo/>
-              <Box className="content">
-                <p className="color-body">Lightscan Explorer Empowering Blockchain Transparency & AI-Driven Insights on Testnet.</p>
-              </Box>
-              <div className="separator-animated animated-true mt--50 mb--50"></div>
-            </Box>
+
             <div className="lsb-newsletter-shape-wrap">
               <div className="shape-bg">
                 <Image
@@ -333,95 +326,47 @@ const Footer = () => {
                 ></Image>
               </div>
             </div>
-            <Box
+            <Grid
               { ...contentProps }
               gridTemplateAreas={{
                 lg: `
-             "network links-top"
-             "info links-bottom"
-             "recaptcha links-bottom"
-           `,
+              "network links-top"
+              "info links-bottom"
+              "recaptcha links-bottom"
+            `,
               }}
               className="footer-wrapper"
+              pt={{ base: 20, lg: 20 }}
+              pb={{ base: 20, lg: 20 }}
             >
-              <Box className="footer-grid-wrapper">
-                <Box className="single-grid grid-column-2">
-                  { renderNetworkInfo({ lg: 'network' }) }
-                  { renderRecaptcha({ lg: 'recaptcha' }) }
-                </Box>
-                <Box className="single-grid">
-                  <Box className="widget-title">
-                    <h4 className="title">Blockchain</h4>
-                  </Box>
-                  <Box className="footer-link">
-                    <Link href="/txs" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Transactions
-                    </Link>
-                    <Link href="/ops" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      User operations
-                    </Link>
-                    <Link href="/blocks" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Blocks
-                    </Link>
-                    <Link href="/accounts" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Top accounts
-                    </Link>
-                    <Link href="/verified-contracts" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Verified contracts
-                    </Link>
-                    <Link href="/withdrawals" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Withdrawals
-                    </Link>
-                  </Box>
-                </Box>
-                <Box className="single-grid">
-                  <Box className="widget-title">
-                    <h4 className="title">Useful links</h4>
-                  </Box>
-                  <Box className="footer-link">
-                    <Link href="https://lightfaucet.ai/" target="_blank" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      LCAI Faucet
-                    </Link>
-                    <Link href="https://docs.lightchain.ai/" target="_blank" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Documentation
-                    </Link>
-                    <Link href="/api-docs" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      REST API
-                    </Link>
-                    <Link href="/tokens" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Tokens
-                    </Link>
-                    <Link href="/token-transfers" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Token transfers
-                    </Link>
-                    <Link href="/contract-verification" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Verify contract
-                    </Link>
-                    <Link href="/gas-tracker" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Gas tracker
-                    </Link>
-                  </Box>
-                </Box>
-                <Box className="single-grid">
-                  <Box className="widget-title">
-                    <h4 className="title">Socials</h4>
-                  </Box>
-                  <Link href="https://x.com/LightchainAI" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
-                    Twitter (X)
-                  </Link>
-                  <Link href="https://t.me/LightchainProtocol" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
-                    Telegram
-                  </Link>
-                  <Link href="https://linktr.ee/lightchainai" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
-                    Linktree
-                  </Link>
-                </Box>
-              </Box>
-            </Box>
+              { renderNetworkInfo({ lg: 'network' }) }
+              { renderProjectInfo({ lg: 'info' }) }
+              { renderRecaptcha({ lg: 'recaptcha' }) }
 
-            <Box className="lcai-copyright-area">
-              <p className="copyright-text">© 2025 Lightscan. All rights reserved</p>
-            </Box>
+              <Grid
+                gridArea={{ lg: 'links-bottom' }}
+                gap={ 1 }
+                gridTemplateColumns={{
+                  base: 'repeat(1, 160px)',
+                  sm: 'repeat(2, 160px)',
+                  xl: 'repeat(3, 160px)',
+                }}
+                gridTemplateRows={{
+                  base: 'auto',
+                  lg: 'repeat(3, auto)',
+                  xl: 'repeat(2, auto)',
+                }}
+                gridAutoFlow={{ base: 'row', lg: 'column' }}
+                alignContent="start"
+                justifyContent={{ base: 'start', lg: 'flex-end' }}
+                mt={{ base: 8, lg: 0 }}
+                className="footer-link"
+              >
+                { BLOCKSCOUT_LINKS.map((link) => (
+                  <FooterLinkItem { ...link } key={ link.text }/>
+                )) }
+              </Grid>
+            </Grid>
           </Box>
         </Container>
       </div>

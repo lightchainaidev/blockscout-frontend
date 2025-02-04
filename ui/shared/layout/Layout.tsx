@@ -14,8 +14,8 @@ import * as Layout from './components';
 const LayoutDefault = ({ children }: Props) => {
   return (
     <Box>
-      { /* <Layout.TopRow/> */ }
-      <Layout.Container p={{ base: 4, lg: 8 }}>
+      { /* <Layout.TopRow/>  p={{ base: 4, lg: 8 }} */ }
+      <Layout.Container>
         <HeaderMobile/>
         <NavbarUpdate/>
 

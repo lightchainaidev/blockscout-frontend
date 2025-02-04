@@ -38,6 +38,15 @@
             padding: 25px 20px;
         }
 
+        @media #{$sm-layout} {
+            flex-direction: row;
+            padding: 20px 15px;
+            align-items: center;
+        }
+        @media #{$large-mobile} {
+            padding: 15px 10px;
+        }
+
         &::before {
             content: "";
             position: absolute;
@@ -70,6 +79,7 @@
 
         .icon {
             width: 60px;
+            min-width: 60px;
             height: 60px;
             border-radius: 100%;
             display: flex;
@@ -79,11 +89,18 @@
             position: relative;
             z-index: 2;
             overflow: hidden;
-
+            @media #{$sm-layout} {
+                margin-bottom: 0;
+            }
+            @media #{$large-mobile} {
+                width: 40px;
+                min-width: 40px;
+                height: 40px;
+            
+            }
             .css-2ncwku {
                 width: 100%;
             }
-
             &::before {
                 content: "";
                 position: absolute;
@@ -96,7 +113,6 @@
                 border-radius: 100%;
                 z-index: -1;
             }
-
             &::after {
                 content: "";
                 position: absolute;
@@ -106,7 +122,6 @@
                 background: linear-gradient(135deg, #171720 -8.77%, #242341 106.24%);
                 border-radius: 100%;
             }
-
             .icon-light {
                 position: absolute;
                 bottom: -10px;
@@ -119,17 +134,24 @@
                 width: 26px;
                 height: 26px;
             }
-
             svg {
                 background: linear-gradient(180deg, #DAA5FF 0%, #3136FF 100%);
                 background-clip: text;
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 color: var(--color-heading);
+                @media #{$large-mobile} {
+                    width: 16px;
+                    height: 16px;
+                }
             }
-
             .chakra-skeleton {
                 display: block;
+                @media #{$large-mobile} {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
             }
         }
 
@@ -163,6 +185,9 @@
             color: var(--color-heading);
             margin: 0;
             padding: 0;
+            @media #{$large-mobile} {
+                font-size: 18px;
+            }
         }
 
 

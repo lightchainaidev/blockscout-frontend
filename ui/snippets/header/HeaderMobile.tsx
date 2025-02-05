@@ -10,6 +10,7 @@ import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileMobile from 'ui/snippets/user/profile/UserProfileMobile';
 import UserWalletMobile from 'ui/snippets/user/wallet/UserWalletMobile';
 
+import Settings from '../topBar/settings/Settings';
 import Burger from './Burger';
 
 type Props = {
@@ -52,13 +53,20 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
           <Burger/>
         </div>
         <NetworkLogo ml={ 2 } mr="auto"/>
-        <Flex columnGap={ 2 } className="lcai-mobile-menu-button">
-          { config.features.rewards.isEnabled && <RewardsButton/> }
-          {
-            (config.features.account.isEnabled && <UserProfileMobile/>) ||
+        <Flex
+          alignItems="center"
+          justifyContent="end"
+          gap="10px"
+        >
+          <Settings/>
+          <Flex columnGap={ 2 } className="lcai-mobile-menu-button">
+            { config.features.rewards.isEnabled && <RewardsButton/> }
+            {
+              (config.features.account.isEnabled && <UserProfileMobile/>) ||
               (config.features.blockchainInteraction.isEnabled && <UserWalletMobile/>) ||
               <Box boxSize={ 10 }/>
-          }
+            }
+          </Flex>
         </Flex>
       </Flex>
       { !hideSearchBar && searchBar }

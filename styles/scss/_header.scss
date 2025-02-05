@@ -1,8 +1,12 @@
 // Header Top Bar 
+.main-home-area{
+    position: relative;
+}
 .lcai-update-header-wrapper {
     position: relative;
     margin-bottom: 10px;
     padding: 40px 15px;
+    z-index: 999;
 
     @media #{$md-layout} {
         display: none;
@@ -17,7 +21,7 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        z-index: 99;
+        z-index: -1;
         @media #{$lg-layout} {
             display: none;
         }
@@ -56,6 +60,7 @@ header {
 
 // Header Style Start 
 .mainmenu-nav {
+    position: relative;
     .css-1129k9b {
         padding-right: 28px;
     }
@@ -179,6 +184,7 @@ header {
 }
 
 .mobile-menu {
+
     .banner-search {
         padding-top: 0;
         width: 100%;
@@ -194,7 +200,10 @@ header {
         }
     }
     .lcai-mobile-inner {
-       
+        @media #{$sm-layout} {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
     }
 }
 

@@ -6,7 +6,7 @@ import type { Route } from 'nextjs-routes';
 
 import Skeleton from 'ui/shared/chakra/Skeleton';
 import Hint from 'ui/shared/Hint';
-import IconSvg, { type IconName } from 'ui/shared/IconSvg';
+import { type IconName } from 'ui/shared/IconSvg';
 import TruncatedValue from 'ui/shared/TruncatedValue';
 
 export type Props = {
@@ -73,22 +73,6 @@ const StatsWidget = ({
           } :
           {}) }
       >
-        { icon && (
-          <div className="icon">
-            <div className="icon-light"></div>
-            <IconSvg
-              className="color-heading"
-              name={ icon }
-              p={ 2 }
-              boxSize="40px"
-              color="primary.100"
-              isLoading={ isLoading }
-              borderRadius="base"
-              display={{ base: 'none', lg: 'block' }}
-              flexShrink={ 0 }
-            />
-          </div>
-        ) }
 
         <Box w={{ base: '100%', lg: icon ? 'calc(100% - 48px)' : '100%' }}>
           <Skeleton

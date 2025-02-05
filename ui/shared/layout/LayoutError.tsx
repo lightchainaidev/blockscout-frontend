@@ -1,4 +1,3 @@
-import { Box } from '@chakra-ui/react';
 import React from 'react';
 
 import type { Props } from './types';
@@ -14,14 +13,10 @@ import * as Layout from './components';
 const LayoutError = ({ children }: Props) => {
   return (
     <Layout.Container>
-      <Layout.TopRow/>
-      <Layout.NavBar/>
       <HeaderMobile/>
-      <Box p={{ base: 4, lg: 8 }}>
-        <NavbarUpdate/>
-      </Box>
+      <NavbarUpdate/>
+
       <Layout.MainArea>
-        { /* <Layout.SideBar/> */ }
         <Layout.MainColumn>
           <HeaderAlert/>
           <HeaderDesktop/>

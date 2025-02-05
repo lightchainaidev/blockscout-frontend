@@ -48,9 +48,7 @@
 // }
 
 .footer-link {
-    // display: flex !important;
     gap: 8px !important;
-    // flex-direction: column;
     margin: 0 0;
 
     a {
@@ -59,7 +57,6 @@
         }
     }
 }
-
 
 
 @media screen and (min-width: 1440px) {
@@ -73,7 +70,8 @@
 .lcai-footer-wrapper {
     .footer-wrapper {
         margin-right: 0 !important;
-        padding: 80px 0;
+        padding: 50px 0;
+
         .widget-title {
             .title {
                 font-size: 18px;
@@ -83,20 +81,37 @@
                 color: var(--color-heading);
             }
         }
+
         .footer-grid-wrapper {
             display: flex;
             flex-wrap: wrap;
             margin: -15px;
+
             .single-grid {
                 padding: 15px;
                 flex-basis: 20%;
+
+                .chakra-link {
+                    color: var(--color-body) !important;
+
+                    &:hover {
+                        color: var(--chakra-colors-link) !important;
+                    }
+                }
+
+                @media screen and (max-width: 575px) {
+                    flex-basis: 50% !important;
+                }
+
                 @media #{$sm-layout} {
-                    flex-basis: 50%;
+                    flex-basis: 25%;
                     width: 50%;
                 }
+
                 &.grid-column-2 {
                     flex-basis: 40%;
                     width: 40%;
+
                     @media #{$sm-layout} {
                         flex-basis: 50%;
                         width: 50%;
@@ -104,8 +119,8 @@
                 }
             }
         }
-        
-        
+
+
     }
 }
 
@@ -115,6 +130,7 @@
 .lcai-footer-top-section {
     text-align: center;
     padding-top: 20px;
+
     .content {
         p {
             margin-top: 15px;
@@ -124,14 +140,15 @@
 
 // CopyRight Area 
 .lcai-copyright-area {
-    padding: 30px 0;
+    padding: 15px 0;
     border-top: 2px solid var(--color-border);
     text-align: center;
     position: relative;
     z-index: 2;
+
     p {
         color: var(--color-body);
-        font-size: 16px;
+        font-size: 14px;
     }
 }
 
@@ -141,8 +158,8 @@
     overflow: hidden;
     height: 2px;
     width: 100%;
-    background: linear-gradient(90deg,transparent,hsla(0,0%,100%,0) 0,rgba(111,100,233,.6) 50%,transparent);
-    margin-top: 50px;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0) 0, rgba(111, 100, 233, .6) 50%, transparent);
+    margin-top: 40px;
 
     &.animated-true {
         &::before {
@@ -150,7 +167,7 @@
             position: absolute;
             width: 3%;
             height: 100%;
-            background: linear-gradient(90deg,transparent 0,hsla(0,0%,100%,0) 0,var(--color-primary) 50%,transparent 100%);
+            background: linear-gradient(90deg, transparent 0, hsla(0, 0%, 100%, 0) 0, var(--color-primary) 50%, transparent 100%);
             -webkit-backdrop-filter: blur(20px);
             backdrop-filter: blur(20px);
             animation: separateline 5s ease-in-out infinite
@@ -187,11 +204,3 @@
         top: -10%
     }
 }
-
-
-
-
-
-
-
-

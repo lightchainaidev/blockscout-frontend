@@ -133,11 +133,12 @@ const Footer = () => {
     (gridArea?: GridProps['gridArea']) => {
       return (
         <Flex
+          justifyContent="center"
           gridArea={ gridArea }
           flexWrap="wrap"
-          columnGap={ 8 }
+          columnGap={ 4 }
           rowGap={ 6 }
-          mb={{ base: 5, lg: 10 }}
+          mt={{ base: 5, lg: 8 }}
           _empty={{ display: 'none' }}
         >
           { !config.UI.indexingAlert.intTxs.isHidden && <IntTxsIndexingStatus/> }
@@ -311,7 +312,14 @@ const Footer = () => {
             <Box className="lcai-footer-top-section">
               <NetworkLogo/>
               <Box className="content">
-                <p className="color-body">Lightscan Explorer Empowering Blockchain Transparency & AI-Driven Insights on Testnet.</p>
+                <p className="color-body">
+                  Lightscan Explorer Empowering Blockchain Transparency &
+                  AI-Driven Insights on Testnet.
+                </p>
+              </Box>
+              <Box className="single-grid grid-column-2">
+                { renderNetworkInfo({ lg: 'network' }) }
+                { renderRecaptcha({ lg: 'recaptcha' }) }
               </Box>
               <div className="separator-animated animated-true mt--50 mb--50"></div>
             </Box>
@@ -344,33 +352,115 @@ const Footer = () => {
               }}
               className="footer-wrapper"
             >
-              <Box className="footer-grid-wrapper">
-                <Box className="single-grid grid-column-2">
-                  { renderNetworkInfo({ lg: 'network' }) }
-                  { renderRecaptcha({ lg: 'recaptcha' }) }
-                </Box>
+              <Box className="footer-grid-wrapper" justifyContent="center">
                 <Box className="single-grid">
                   <Box className="widget-title">
                     <h4 className="title">Blockchain</h4>
                   </Box>
                   <Box className="footer-link">
-                    <Link href="/txs" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="/txs"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       Transactions
                     </Link>
-                    <Link href="/ops" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="/ops"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       User operations
                     </Link>
-                    <Link href="/blocks" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="/blocks"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       Blocks
                     </Link>
-                    <Link href="/accounts" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="/accounts"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       Top accounts
                     </Link>
-                    <Link href="/verified-contracts" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="/withdrawals"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Withdrawals
+                    </Link>
+                  </Box>
+                </Box>
+                <Box className="single-grid">
+                  <Box className="footer-link" mt={{ base: 1, sm: 8 }}>
+                    <Link
+                      href="/verified-contracts"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       Verified contracts
                     </Link>
-                    <Link href="/withdrawals" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Withdrawals
+                    <Link
+                      href="/tokens"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Tokens
+                    </Link>
+                    <Link
+                      href="/token-transfers"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Token transfers
+                    </Link>
+                    <Link
+                      href="/gas-tracker"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Gas tracker
+                    </Link>
+                    <Link
+                      href="/contract-verification"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Verify contract
                     </Link>
                   </Box>
                 </Box>
@@ -379,26 +469,57 @@ const Footer = () => {
                     <h4 className="title">Useful links</h4>
                   </Box>
                   <Box className="footer-link">
-                    <Link href="https://lightfaucet.ai/" target="_blank" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="https://lightfaucet.ai/"
+                      target="_blank"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       LCAI Faucet
                     </Link>
-                    <Link href="https://docs.lightchain.ai/" target="_blank" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="https://docs.lightchain.ai/"
+                      target="_blank"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       Documentation
                     </Link>
-                    <Link href="/api-docs" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
+                    <Link
+                      href="https://docs.blockscout.com/for-users/api/rpc-endpoints"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
                       REST API
                     </Link>
-                    <Link href="/tokens" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Tokens
+                    <Link
+                      href="https://docs.blockscout.com/for-users/api/eth-rpc"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      Eth RPC API
                     </Link>
-                    <Link href="/token-transfers" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Token transfers
-                    </Link>
-                    <Link href="/contract-verification" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Verify contract
-                    </Link>
-                    <Link href="/gas-tracker" display="flex" alignItems="center" h="30px" variant="secondary" fontSize="xs">
-                      Gas tracker
+                    <Link
+                      href="/api-docs"
+                      display="flex"
+                      alignItems="center"
+                      h="30px"
+                      variant="secondary"
+                      fontSize="xs"
+                    >
+                      RPC API
                     </Link>
                   </Box>
                 </Box>
@@ -406,13 +527,48 @@ const Footer = () => {
                   <Box className="widget-title">
                     <h4 className="title">Socials</h4>
                   </Box>
-                  <Link href="https://x.com/LightchainAI" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
+                  <Link
+                    href="https://x.com/LightchainAI"
+                    display="flex"
+                    alignItems="center"
+                    h="30px"
+                    variant="secondary"
+                    target="_blank"
+                    fontSize="xs"
+                  >
                     Twitter (X)
                   </Link>
-                  <Link href="https://t.me/LightchainProtocol" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
+                  <Link
+                    href="https://t.me/LightchainProtocol"
+                    display="flex"
+                    alignItems="center"
+                    h="30px"
+                    variant="secondary"
+                    target="_blank"
+                    fontSize="xs"
+                  >
                     Telegram
                   </Link>
-                  <Link href="https://linktr.ee/lightchainai" display="flex" alignItems="center" h="30px" variant="secondary" target="_blank" fontSize="xs">
+                  <Link
+                    href="https://coinmarketcap.com/community/profile/lightchainai/"
+                    display="flex"
+                    alignItems="center"
+                    h="30px"
+                    variant="secondary"
+                    target="_blank"
+                    fontSize="xs"
+                  >
+                    CoinMarketCap
+                  </Link>
+                  <Link
+                    href="https://linktr.ee/lightchainai"
+                    display="flex"
+                    alignItems="center"
+                    h="30px"
+                    variant="secondary"
+                    target="_blank"
+                    fontSize="xs"
+                  >
                     Linktree
                   </Link>
                 </Box>
@@ -420,7 +576,9 @@ const Footer = () => {
             </Box>
 
             <Box className="lcai-copyright-area">
-              <p className="copyright-text">© 2025 Lightscan. All rights reserved</p>
+              <p className="copyright-text">
+                © 2025 Lightscan. All rights reserved
+              </p>
             </Box>
           </Box>
         </Container>

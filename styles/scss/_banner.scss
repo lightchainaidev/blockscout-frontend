@@ -3,7 +3,7 @@
 .lcai-banner-area {
     position: relative;
     padding-bottom: 80px;
-    overflow: hidden;
+    // overflow: hidden;
     background: var(--chakra-colors-black);
     @media #{$md-layout} {
         padding-bottom: 50px;
@@ -39,7 +39,7 @@
                 font-weight: 400;
                 background: var(--color-dark-3) !important;
                 color: var(--color-body) !important;
-                padding-left: 50px;
+                padding-left: 30px;
                 @media #{$sm-layout} {
                     height: 45px;
                     padding-right: 50px;

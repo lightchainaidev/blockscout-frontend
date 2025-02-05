@@ -39,7 +39,7 @@ const TxsStats = () => {
       gridTemplateColumns={{ base: '1fr', lg: 'repeat(4, calc(25% - 9px))' }}
       rowGap={ 3 }
       columnGap={ 3 }
-      mb={ 6 }
+      mt={ 9 }
       className="lcai-counterup-wrapper"
     >
       <StatsWidget

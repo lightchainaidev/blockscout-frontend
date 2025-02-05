@@ -27,20 +27,10 @@ const Home = () => {
   })();
 
   return (
-    <Box className="main-home-area" as="main">
-      <Flex
-        flexDir={{ base: 'column', lg: 'row' }}
-        columnGap={ 2 }
-        rowGap={ 1 }
-        mt={ 0 }
-        _empty={{ mt: 0 }}
-      >
-        <Stats/>
-        <ChainIndicators/>
-      </Flex>
+    <Box className="main-home-area" as="main" pb={ 8 }>
       <div className="latest">
         <Container maxW="1320px">
-          <div className="lcai-section-gapBottom">
+          <div className="lcai-section-gapBottom-none">
             <Flex
               className="lcai-block-with-sidebar"
               direction={{ base: 'column', lg: 'row' }}
@@ -53,6 +43,16 @@ const Home = () => {
           </div>
         </Container>
       </div>
+      <Flex
+        flexDir={{ base: 'column', lg: 'row' }}
+        columnGap={ 2 }
+        rowGap={ 1 }
+        mt={ 6 }
+        _empty={{ mt: 0 }}
+      >
+        <Stats/>
+        <ChainIndicators/>
+      </Flex>
     </Box>
   );
 };

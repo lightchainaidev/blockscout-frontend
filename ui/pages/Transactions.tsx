@@ -183,13 +183,13 @@ const Transactions = () => {
         title={ config.meta.seo.enhancedDataEnabled ? `${ config.chain.name } transactions` : 'Transactions' }
         withTextAd
       />
-      <TxsStats/>
       <RoutedTabs
         tabs={ tabs }
         tabListProps={ isMobile ? undefined : TAB_LIST_PROPS }
         rightSlot={ rightSlot }
         stickyEnabled={ !isMobile }
       />
+      <TxsStats/>
     </>
   );
 };

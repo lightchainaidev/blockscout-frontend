@@ -28,6 +28,7 @@ import AddressEpochRewards from 'ui/address/AddressEpochRewards';
 import AddressInternalTxs from 'ui/address/AddressInternalTxs';
 import AddressLogs from 'ui/address/AddressLogs';
 import AddressMud from 'ui/address/AddressMud';
+import AddressProgress from 'ui/address/AddressProgress';
 import AddressTokens from 'ui/address/AddressTokens';
 import AddressTokenTransfers from 'ui/address/AddressTokenTransfers';
 import AddressTxs from 'ui/address/AddressTxs';
@@ -413,17 +414,27 @@ const AddressPageContent = () => {
   return (
     <>
       <TextAd mb={ 6 }/>
-      <PageTitle
-        title={ `${ addressQuery.data?.is_contract ? 'Contract' : 'Address' } details` }
-        backLink={ backLink }
-        contentAfter={ titleContentAfter }
-        secondRow={ titleSecondRow }
-        isLoading={ isLoading }
-      />
-      { !addressMetadataQuery.isPending &&
-        <AddressMetadataAlert tags={ addressMetadataQuery.data?.addresses?.[hash.toLowerCase()]?.tags } mt="-4px" mb={ 6 }/> }
-      { config.features.metasuites.isEnabled && <Box display="none" id="meta-suites__address" data-ready={ !isLoading }/> }
-      <AddressDetails addressQuery={ addressQuery } scrollRef={ tabsScrollRef }/>
+      <Box className="address"
+        display={{ base: 'block', lg: 'flex' }} position="relative" justifyContent="space-between" alignItems="center">
+        <div className="address-content">
+          <PageTitle
+            title={ `${ addressQuery.data?.is_contract ? 'Contract' : 'Address' } details` }
+            backLink={ backLink }
+            contentAfter={ titleContentAfter }
+            secondRow={ titleSecondRow }
+            isLoading={ isLoading }
+          />
+          { !addressMetadataQuery.isPending &&
+          <AddressMetadataAlert tags={ addressMetadataQuery.data?.addresses?.[hash.toLowerCase()]?.tags } mt="-4px" mb={ 6 }/> }
+          { config.features.metasuites.isEnabled && <Box display="none" id="meta-suites__address" data-ready={ !isLoading }/> }
+          <Box className="address-wrapper">
+            <AddressDetails addressQuery={ addressQuery } scrollRef={ tabsScrollRef }/>
+          </Box>
+        </div>
+        <div className="progress-wrapper">
+          <AddressProgress/>
+        </div>
+      </Box>
       { /* should stay before tabs to scroll up with pagination */ }
       <Box ref={ tabsScrollRef }></Box>
       { content }

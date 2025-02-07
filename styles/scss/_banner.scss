@@ -5,14 +5,17 @@
     padding-bottom: 80px;
     // overflow: hidden;
     background: var(--chakra-colors-black);
+
     @media #{$md-layout} {
         padding-bottom: 50px;
         padding-top: 50px;
     }
+
     @media #{$sm-layout} {
         padding-bottom: 50px;
         padding-top: 50px;
     }
+
     .top-shape-thumbnail {
         position: absolute;
         z-index: 2;
@@ -20,18 +23,23 @@
         left: 50%;
         transform: translateX(-50%);
     }
+
     .banner-content {
         position: relative;
+
         .banner-search {
             position: relative;
+
             @media #{$md-layout} {
                 padding-left: 30px;
                 padding-right: 30px;
             }
+
             @media #{$sm-layout} {
                 padding-left: 15px;
                 padding-right: 15px;
             }
+
             input {
                 height: 60px;
                 border-radius: 100px !important;
@@ -40,21 +48,24 @@
                 background: var(--color-dark-3) !important;
                 color: var(--color-body) !important;
                 padding-left: 30px;
+
                 @media #{$sm-layout} {
                     height: 45px;
                     padding-right: 50px;
                 }
-              
+
             }
+
             @media screen and (max-width: 999px) {
                 .css-1ldqtjq {
                     padding-left: 20px;
                 }
             }
-            
+
             .css-80g4r1 {
                 left: inherit;
                 right: 20px;
+
                 svg,
                 .css-uwwqev {
                     width: 20px;
@@ -69,7 +80,7 @@
     .banner-search {
         .css-80g4r1 {
             width: var(--chakra-sizes-6);
-          
+
         }
 
         .css-1ldqtjq {
@@ -91,13 +102,16 @@
 
 .banner {
     padding-top: 80px;
-    margin-top: 0px; 
+    margin-top: 0px;
+
     @media #{$lg-layout} {
         padding-top: 40px;
     }
+
     @media #{$md-layout} {
         padding-top: 0;
     }
+
     @media #{$sm-layout} {
         padding-top: 0;
     }
@@ -114,6 +128,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     @media screen and (min-width: 576px) {
         top: 100px;
     }
@@ -151,29 +166,37 @@
         text-align: center;
         justify-content: center;
         top: -3rem;
+
         @media screen and (min-width: 576px) {
             top: 0;
         }
+
         @media #{$lg-layout} {
             margin-bottom: 30px;
         }
+
         @media #{$md-layout} {
             margin-bottom: 30px;
         }
+
         @media #{$sm-layout} {
             margin-bottom: 30px;
             top: 0;
         }
+
         @media #{$large-mobile} {
             font-size: 24px;
         }
+
         img {
             max-width: 64px;
             max-height: 64px;
+
             @media #{$sm-layout} {
                 width: 40px;
                 height: 40px;
             }
+
             @media #{$large-mobile} {
                 width: 30px;
                 height: 30px;
@@ -237,4 +260,40 @@
 
 form.banner-search.css-jst94c {
     position: relative;
+}
+
+.progress-wrapper {
+    @media #{$md-layout} {
+        position: absolute;
+        top: 0;
+        right: -30%;
+        transform: translate(-50%, 50%);
+    }
+
+    @media screen and (min-width: 576px) {
+        margin: 40px 0 60px 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+    }
+
+
+    @media screen and (min-width: 1400px) {
+        transform: translate(-200px, 0);
+    }
+
+    .tick-value {
+        text {
+
+            fill: var(--color-body) !important;
+        }
+    }
+
+    .value-text {
+        text {
+            fill: var(--color-heading) !important;
+        }
+    }
+
 }

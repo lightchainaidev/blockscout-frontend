@@ -7,6 +7,8 @@ const DEFAULT_TEMPLATE = 'Open-source block explorer by Blockscout. Search trans
 // FIXME all page descriptions will be updated later
 const TEMPLATE_MAP: Record<Route['pathname'], string> = {
   '/': DEFAULT_TEMPLATE,
+  '/privacy-policy': DEFAULT_TEMPLATE,
+  '/terms-condition': DEFAULT_TEMPLATE,
   '/txs': DEFAULT_TEMPLATE,
   '/txs/kettle/[hash]': DEFAULT_TEMPLATE,
   '/tx/[hash]': 'View transaction %hash% on %network_title%',

@@ -1,7 +1,11 @@
 import { Box } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
-function AddressProgress() {
+type Props = {
+  score?: number;
+};
+
+function AddressProgress({ score = 0 }: Props) {
   const [ GaugeComponent, setGaugeComponent ] = useState(null);
 
   useEffect(() => {
@@ -57,7 +61,7 @@ function AddressProgress() {
             },
           ],
         }}
-        value={ 40 }
+        value={ score }
       />
     </Box>
   );

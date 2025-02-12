@@ -1,7 +1,10 @@
 import { Box, Flex, HStack, useColorModeValue } from '@chakra-ui/react';
+import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/router';
 import React from 'react';
 
+import { getFeaturePayload } from 'configs/app/features/types';
+import type { AIAudit } from 'types/api/aiAudit';
 import type { EntityTag } from 'ui/shared/EntityTags/types';
 import type { RoutedTab } from 'ui/shared/Tabs/types';
 
@@ -11,6 +14,7 @@ import useAddressMetadataInfoQuery from 'lib/address/useAddressMetadataInfoQuery
 import useApiQuery from 'lib/api/useApiQuery';
 import { useAppContext } from 'lib/contexts/app';
 import useAddressProfileApiQuery from 'lib/hooks/useAddressProfileApiQuery';
+import useFetch from 'lib/hooks/useFetch';
 import useIsSafeAddress from 'lib/hooks/useIsSafeAddress';
 import getNetworkValidationActionText from 'lib/networks/getNetworkValidationActionText';
 import getQueryParamString from 'lib/router/getQueryParamString';
@@ -67,6 +71,7 @@ const xScoreFeature = config.features.xStarScore;
 const AddressPageContent = () => {
   const router = useRouter();
   const appProps = useAppContext();
+  const fetch = useFetch();
 
   const tabsScrollRef = React.useRef<HTMLDivElement>(null);
   const hash = getQueryParamString(router.query.hash);
@@ -128,6 +133,12 @@ const AddressPageContent = () => {
     addressTabsCountersQuery.isPlaceholderData ||
     (config.features.userOps.isEnabled && userOpsAccountQuery.isPlaceholderData) ||
     (config.features.mudFramework.isEnabled && mudTablesCountQuery.isPlaceholderData);
+
+  const aiAuditScoreQuery = useQuery({
+    queryKey: [ 'aiAuditScore', hash ],
+    queryFn: () => fetch(`${ getFeaturePayload(config.features.aiAudit)?.api?.endpoint }/api/audit/${ hash }`) as Promise<{ audit?: AIAudit; status: string }>,
+    enabled: config.features.aiAudit.isEnabled && Boolean(hash) && Boolean(addressQuery.data?.is_contract) && Boolean(addressQuery.data?.is_verified),
+  });
 
   const handleFetchedBytecodeMessage = React.useCallback(() => {
     addressQuery.refetch();
@@ -431,9 +442,11 @@ const AddressPageContent = () => {
             <AddressDetails addressQuery={ addressQuery } scrollRef={ tabsScrollRef }/>
           </Box>
         </div>
-        <div className="progress-wrapper">
-          <AddressProgress/>
-        </div>
+        { !isLoading && aiAuditScoreQuery.data?.audit && (
+          <div className="progress-wrapper">
+            <AddressProgress score={ aiAuditScoreQuery.data.audit.securityScore }/>
+          </div>
+        ) }
       </Box>
       { /* should stay before tabs to scroll up with pagination */ }
       <Box ref={ tabsScrollRef }></Box>

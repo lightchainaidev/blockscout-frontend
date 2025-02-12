@@ -6,7 +6,8 @@ type Props = {
 };
 
 function AddressProgress({ score = 0 }: Props) {
-  const [ GaugeComponent, setGaugeComponent ] = useState(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [ GaugeComponent, setGaugeComponent ] = useState<any>(null);
 
   useEffect(() => {
     import('react-gauge-component').then((module) => {

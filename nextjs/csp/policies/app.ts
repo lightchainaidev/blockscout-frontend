@@ -49,6 +49,7 @@ export function app(): CspDev.DirectiveDescriptor {
       getFeaturePayload(config.features.nameService)?.api.endpoint,
       getFeaturePayload(config.features.addressMetadata)?.api.endpoint,
       getFeaturePayload(config.features.rewards)?.api.endpoint,
+      getFeaturePayload(config.features.aiAudit)?.api.endpoint,
 
       // chain RPC server
       config.chain.rpcUrl,
@@ -60,7 +61,6 @@ export function app(): CspDev.DirectiveDescriptor {
       // github api (used for Stylus contract verification)
       'api.github.com',
 
-      'localhost:8000',
     ].filter(Boolean),
 
     'script-src': [

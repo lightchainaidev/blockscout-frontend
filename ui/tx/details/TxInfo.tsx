@@ -29,7 +29,6 @@ import * as arbitrum from 'lib/rollups/arbitrum';
 import { MESSAGE_DESCRIPTIONS } from 'lib/tx/arbitrumMessageStatusDescription';
 import getConfirmationDuration from 'lib/tx/getConfirmationDuration';
 import { currencyUnits } from 'lib/units';
-import AiInscription from 'ui/shared/AiInscription';
 import Skeleton from 'ui/shared/chakra/Skeleton';
 import Tag from 'ui/shared/chakra/Tag';
 import CopyToClipboard from 'ui/shared/CopyToClipboard';
@@ -165,7 +164,7 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
         ) }
       </DetailsInfoItem.Value>
 
-      { data.inscription && (
+      { /* { data.inscription && (
         <>
           <DetailsInfoItem.Label
             hint="AI Inscription"
@@ -180,7 +179,7 @@ const TxInfo = ({ data, isLoading, socketStatus }: Props) => {
             </Skeleton>
           </DetailsInfoItem.Value>
         </>
-      ) }
+      ) } */ }
 
       <DetailsInfoItem.Label
         hint="Current transaction state: Success, Failed (Error), or Pending (In Process)"

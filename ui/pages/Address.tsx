@@ -51,6 +51,7 @@ import useCheckDomainNameParam from 'ui/address/utils/useCheckDomainNameParam';
 import AccountActionsMenu from 'ui/shared/AccountActionsMenu/AccountActionsMenu';
 import TextAd from 'ui/shared/ad/TextAd';
 import AddressAddToWallet from 'ui/shared/address/AddressAddToWallet';
+import * as DetailsInfoItem from 'ui/shared/DetailsInfoItem';
 import AddressEntity from 'ui/shared/entities/address/AddressEntity';
 import EnsEntity from 'ui/shared/entities/ens/EnsEntity';
 import EntityTags from 'ui/shared/EntityTags/EntityTags';
@@ -442,9 +443,19 @@ const AddressPageContent = () => {
             <AddressDetails addressQuery={ addressQuery } scrollRef={ tabsScrollRef }/>
           </Box>
         </div>
-        { !isLoading && aiAuditScoreQuery.data?.audit && (
+        { addressQuery.data?.is_contract && (
           <div className="progress-wrapper">
-            <AddressProgress score={ aiAuditScoreQuery.data.audit.securityScore }/>
+            <DetailsInfoItem.Label
+              hint="AI Audit Score"
+              isLoading={ addressQuery.isPlaceholderData }
+            >
+              AI Audit Score
+            </DetailsInfoItem.Label>
+            { !isLoading && (
+              <DetailsInfoItem.Value>
+                <AddressProgress score={ addressQuery.data?.is_verified ? aiAuditScoreQuery.data?.audit?.securityScore || 0 : 0 }/>
+              </DetailsInfoItem.Value>
+            ) }
           </div>
         ) }
       </Box>

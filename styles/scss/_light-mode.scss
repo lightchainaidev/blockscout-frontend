@@ -10,6 +10,7 @@ body {
             --chakra-colors-gray-800: #eff3f5;
             --card-bg: #eff3f5;
             --chakra-colors-black: #ffffff;
+
             h1,
             h2,
             h3,
@@ -23,6 +24,7 @@ body {
             .h5,
             .h6 {
                 color: var(--color-heading);
+
                 a {
                     color: inherit;
                 }
@@ -98,25 +100,47 @@ body {
                     color: var(--color-body) !important;
                 }
             }
-            
+
             .lcai-filter-input .chakra-input::-webkit-input-placeholder {
                 /* Chrome/Opera/Safari */
                 color: var(--color-heading);
             }
-            
+
             .lcai-filter-input .chakra-input::-moz-placeholder {
                 /* Firefox 19+ */
                 color: var(--color-heading);
             }
-            
+
             .lcai-filter-input .chakra-input:-ms-input-placeholder {
                 /* IE 10+ */
                 color: var(--color-heading);
             }
-            
+
             .lcai-filter-input .chakra-input:-moz-placeholder {
                 /* Firefox 18- */
                 color: var(--color-heading);
+            }
+
+            .address-modal-sublist .address-modal-sublist-list {
+                background: #f6f6f9;
+                border: 1px solid #f6f6f9;
+            }
+
+
+            .address-modal-close-icon {
+                background: #eff3f5;
+            } 
+
+            
+            .lcai-border-btn, .banner-content .transaction-btn-connect{
+                &:hover{
+                    color: #7064e9 !important
+                }
+            }
+            
+
+            .lcai-pagination button[data-selected="true"], .lcai-pagination button[data-selected="true"][aria-selected="true"] {
+                color: #ffffff;
             }
 
 

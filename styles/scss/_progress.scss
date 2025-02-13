@@ -1,0 +1,222 @@
+.progress-wrapper {
+    display: grid;
+    justify-content: start;
+
+    @media #{$md-layout} {
+        position: absolute;
+        top: 0;
+        right: -30%;
+        transform: translate(-50%, 50%);
+    }
+
+    @media screen and (min-width: 576px) {
+        margin: 40px 0 60px 0;
+    }
+
+    @media screen and (min-width: 768px) {
+        margin: 0;
+    }
+
+
+    @media screen and (min-width: 1400px) {
+        transform: translate(-200px, 0);
+    }
+
+    .tick-value {
+        text {
+
+            fill: var(--color-body) !important;
+        }
+    }
+
+    .value-text {
+        text {
+            fill: var(--color-heading) !important;
+        }
+    }
+
+}
+
+.address-success-100 {
+    color: var(--wui-color-success-base-100) !important;
+}
+
+.address-success-125 {
+    color: var(--wui-color-success-base-125) !important;
+}
+
+.address-warning-100 {
+    color: var(--wui-color-warning-base-100) !important;
+}
+
+.address-error-100 {
+    color: var(--wui-color-error-base-125) !important;
+}
+
+.address-error-125 {
+    color: var(--wui-color-error-base-125) !important;
+}
+
+.address-modal-btn {
+    min-width: auto !important;
+    display: block;
+    width: 100% !important;
+    padding: 10px 20px;
+    height: auto !important;
+    background: var(--chakra-colors-blue-400) !important;
+    font-size: 16px !important;
+    text-decoration: none !important; 
+    line-height: 1.2;
+}
+
+.address-modal-btn-request {
+    min-width: auto !important;
+    width: auto !important;
+    color: var(--chakra-colors-gray-400) !important;
+    background: var(--chakra-colors-transparent) !important;
+
+    &:hover {
+        background-color: #7064e940 !important;
+        color: var(--color-white) !important;
+    }
+}
+
+
+
+.address-modal-list {
+    margin: 0;
+    padding: 0;
+
+    li {
+        margin-bottom: 16px;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+    }
+
+    @media screen and (max-width: 575px) {
+        li {
+            display: grid;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+}
+
+.chakra-modal__body {
+    @media screen and (max-width: 767px) {
+        padding-left: 8px !important;
+        overflow-x: hidden !important;
+    }
+}
+
+.address-modal-sublist {
+    margin: 0;
+    padding: 0;
+
+    li {
+        list-style: none;
+        display: flex;
+
+        @media screen and (max-width: 767px) {
+            display: grid;
+            gap: 5px;
+        }
+    }
+
+    .address-modal-sublist-list {
+        margin: 8px 0 0 42px;
+        background: #0a0a14;
+        padding: 24px 24px;
+        border: 1px solid #13152c;
+        border-radius: 8px;
+
+        @media screen and (max-width: 767px) {
+            margin: 8px 0 0 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            list-style: none;
+            display: flex;
+            gap: 4px;
+
+            @media screen and (max-width: 575px) {
+                display: grid;
+                gap: 5px;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        .address-modal-list-tag {
+            color: var(--color-body) !important;
+        }
+    }
+}
+
+.chakra-modal__content {
+    background: var(--card-bg-2) !important;
+    border: 1px solid #363271 !important;
+}
+
+.address-modal-wrap {
+    background: var(--card-bg-2);
+}
+
+.address-modal-head {
+    background: var(--color-dark-3) !important;
+
+    @media screen and (max-width: 575px) {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+.address-modal-title {
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    text-transform: capitalize;
+}
+
+.address-modal-list-tag {
+    font-weight: 600;
+    color: var(--color-heading);
+    min-width: 134px;
+}
+
+.address-modal-list-text {
+    min-width: 300px;
+    color: var(--color-body);
+
+    @media screen and (max-width: 575px) {
+        min-width: 270px;
+    }
+}
+
+.address-modal-close-icon {
+    cursor: pointer;
+    width: 40px !important;
+    background: #0f0f21;
+    height: 40px !important;
+    padding: 14px;
+    border-radius: 6px;
+    transition: 0.3s;
+    &:hover{
+        color: var(--color-heading);
+    }
+}
+
+.address-modal-close-btn {
+    background: linear-gradient(#7064e966, #7064e969) !important;
+    color: white !important;
+}
+
+.address-progress {
+    div {
+        background-color: var(--color-primary);
+    }
+}

@@ -1,16 +1,29 @@
 // Header Top Bar 
-.main-home-area{
+.main-home-area {
     position: relative;
+
+    .chakra-container.css-ke22i8 {
+        @media #{$smlg-device} {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
 }
+
 .lcai-update-header-wrapper {
     position: relative;
     margin-bottom: 10px;
     padding: 40px 15px;
     z-index: 999;
 
+    @media #{$lgtolp-device} {
+        padding: 40px 0px !important;
+    }
+
     @media #{$md-layout} {
         display: none;
     }
+
     @media #{$sm-layout} {
         display: none;
     }
@@ -22,17 +35,20 @@
         display: flex;
         justify-content: center;
         z-index: -1;
+
         @media #{$lg-layout} {
             display: none;
         }
-         img {
+
+        img {
             @media #{$md-layout} {
                 display: none !important;
             }
+
             @media #{$sm-layout} {
                 display: none !important;
             }
-         }
+        }
 
         .for-dark {
             display: block;
@@ -61,6 +77,7 @@ header {
 // Header Style Start 
 .mainmenu-nav {
     position: relative;
+
     .css-1129k9b {
         padding-right: 28px;
     }
@@ -140,6 +157,7 @@ header {
         background: var(--color-primary);
         color: #ffffff;
         height: 40px !important;
+
         @media #{$large-mobile} {
             height: 36px !important;
         }
@@ -159,6 +177,7 @@ header {
         z-index: 2;
         overflow: hidden;
         margin-right: 4px;
+
         &::before {
             content: "";
             position: absolute;
@@ -171,10 +190,12 @@ header {
             border-radius: 6px;
             z-index: -1;
         }
+
         div {
             display: block;
             text-align: center;
         }
+
         svg {
             width: 25px;
             height: 25px;
@@ -191,14 +212,17 @@ header {
         max-width: 100%;
         top: 0;
         margin-bottom: 20px;
+
         input {
             width: 100%;
             height: 47px;
         }
+
         &.css-xoogi8 {
             display: none;
         }
     }
+
     .lcai-mobile-inner {
         @media #{$sm-layout} {
             padding-left: 10px;
@@ -208,9 +232,7 @@ header {
 }
 
 .lcai-main-home {
-    .lcai-mobile-inner {
-        
-    }
+    .lcai-mobile-inner {}
 }
 
 .mt--30 {

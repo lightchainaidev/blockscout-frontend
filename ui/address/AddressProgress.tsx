@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { Box, useColorModeValue } from '@chakra-ui/react';
 import React, { useEffect, useState } from 'react';
 
 type Props = {
@@ -7,6 +7,7 @@ type Props = {
 
 function AddressProgress({ score = 0 }: Props) {
   const [ GaugeComponent, setGaugeComponent ] = useState(null);
+  const color = useColorModeValue('#eff3f5', '#14152c');
 
   useEffect(() => {
     import('react-gauge-component').then((module) => {
@@ -24,7 +25,6 @@ function AddressProgress({ score = 0 }: Props) {
       mt={{ base: 5, sm: 0 }}
       width={{ base: 270, sm: 400 }}
       height={{ base: 160, sm: 250 }}
-      //   style={{ width: "400px", height: "250px"  #14152c}}
     >
       { ' ' }
       <GaugeComponent
@@ -32,7 +32,7 @@ function AddressProgress({ score = 0 }: Props) {
         style={{ width: '100%', height: '100%' }}
         marginInPercent={{ top: 0.08, bottom: 0.0, left: 0.07, right: 0.07 }}
         arc={{
-          emptyColor: '#14152c',
+          emptyColor: color,
           subArcs: [
             {
               limit: 20,

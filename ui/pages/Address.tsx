@@ -704,9 +704,11 @@ const AddressPageContent = () => {
             </DetailsInfoItem.Label>
             { !isLoading && (
               <DetailsInfoItem.Value>
-                <AddressProgress score={ addressQuery.data?.is_verified ? aiAuditScoreQuery.data?.audit?.securityScore || 0 : 0 }/>
-                <Box display="flex" justifyContent="center">
-                  <AddressModal/>
+                <Box>
+                  <AddressProgress score={ addressQuery.data?.is_verified ? aiAuditScoreQuery.data?.audit?.securityScore || 0 : 0 }/>
+                  <Box display="flex" justifyContent="center">
+                    <AddressModal audit={ aiAuditScoreQuery.data?.audit }/>
+                  </Box>
                 </Box>
               </DetailsInfoItem.Value>
             ) }

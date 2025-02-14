@@ -10,13 +10,34 @@ import {
   Box,
   Progress,
   ModalBody,
-  Link,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useMemo } from 'react';
 
-const AddressModal = () => {
+import type { AIAudit } from 'types/api/aiAudit';
+
+const AddressModal = ({ audit }: { audit?: AIAudit }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+  const riskLevelColor = useMemo(() => {
+    if (audit?.riskLevel === 'High') return 'address-error-100';
+    if (audit?.riskLevel === 'Medium') return 'address-warning-100';
+    if (audit?.riskLevel === 'Low') return 'address-success-100';
+    return 'address-success-100';
+  }, [ audit?.riskLevel ]);
+
+  const statusColor = useMemo(() => {
+    if (audit?.status === 'completed') return 'address-success-100';
+    if (audit?.status === 'pending') return 'address-warning-100';
+    if (audit?.status === 'failed') return 'address-error-100';
+    return 'address-success-100';
+  }, [ audit?.status ]);
+
+  const time = useMemo(() => {
+    if (audit?.createdAt) return new Date(audit?.createdAt).toLocaleString();
+    return '';
+  }, [ audit?.createdAt ]);
+
+  if (!audit) return null;
   return (
     <>
       <Box>
@@ -34,9 +55,9 @@ const AddressModal = () => {
             Audit Report
           </Button>
         </Box>
-        <Link className="transaction-btn-connect address-modal-btn address-modal-btn-request lcai-border-btn" href="#" isExternal>
+        { /* <Link className="transaction-btn-connect address-modal-btn address-modal-btn-request lcai-border-btn" href="#" isExternal>
           Request Manual Review
-        </Link>
+        </Link> */ }
       </Box>
 
       <div className="address-modal-wrapper">
@@ -75,7 +96,7 @@ const AddressModal = () => {
                 <li>
                   <span className="address-modal-list-tag">ID:</span>
                   <span className="address-modal-list-text">
-                    67abf58ec0cc43d0401b1716e
+                    { audit._id }
                   </span>
                 </li>
                 <li>
@@ -83,31 +104,25 @@ const AddressModal = () => {
                     ContactAddress:
                   </span>
                   <span className="address-modal-list-text">
-                    0xFB122130C4d28860dbC050A8e024A71a558eB0C1
+                    { audit.contractAddress }
+                  </span>
+                </li>
+                <li>
+                  <span className="address-modal-list-tag">Status:</span>
+                  <span className={ `address-modal-list-text ${ statusColor }` }>
+                    { audit.status }
+                  </span>
+                </li>
+                <li>
+                  <span className="address-modal-list-tag">Risk Level:</span>
+                  <span className={ `address-modal-list-text ${ riskLevelColor }` }>
+                    { audit.riskLevel }
                   </span>
                 </li>
                 <li>
                   <span className="address-modal-list-tag">CreatedAt:</span>
                   <span className="address-modal-list-text">
-                    2025-02-12T01:12:46.724+00:00
-                  </span>
-                </li>
-                <li>
-                  <span className="address-modal-list-tag">Status:</span>
-                  <span className="address-modal-list-text address-success-100">
-                    Completed
-                  </span>
-                </li>
-                <li>
-                  <span className="address-modal-list-tag">UpdateddAt:</span>
-                  <span className="address-modal-list-text">
-                    2025-02-12T01:12:46.724+00:00
-                  </span>
-                </li>
-                <li>
-                  <span className="address-modal-list-tag">Risk Level:</span>
-                  <span className="address-modal-list-text address-success-100">
-                    Low
+                    { time }
                   </span>
                 </li>
                 <li>
@@ -117,12 +132,12 @@ const AddressModal = () => {
                   <Box display="flex" alignItems="center" gap={ 3 }>
                     <Progress
                       className="address-progress"
-                      value={ 90 }
+                      value={ audit.securityScore }
                       size="xs"
                       colorScheme="pink"
                       width={ 180 }
                     />
-                    <span className="address-modal-list-text">90</span>
+                    <span className="address-modal-list-text">{ audit.securityScore }</span>
                   </Box>
                 </li>
               </ul>
@@ -132,52 +147,36 @@ const AddressModal = () => {
                 <li>
                   <span className="address-modal-list-tag">Findings:</span>
                   <ul className="address-modal-sublist-list">
-                    <li>
-                      <span className="address-modal-list-tag">
-                        Best Practice:
-                      </span>
-                      <span className="address-modal-list-text">
-                        Use a re-entrancy guard. Though there is no current...
-                      </span>
-                    </li>
-                    <li>
-                      <span className="address-modal-list-tag">
-                        Best Practice:
-                      </span>
-                      <span className="address-modal-list-text">
-                        Add comments to the functions to improve readability...
-                      </span>
-                    </li>
-                    <li>
-                      <span className="address-modal-list-tag">
-                        Best Practice:
-                      </span>
-                      <span className="address-modal-list-text">
-                        The contract could benefit from event logging. Even...
-                      </span>
-                    </li>
-                    <li>
-                      <span className="address-modal-list-tag">
-                        Best Practice:
-                      </span>
-                      <span className="address-modal-list-text">
-                        Consider separating the concerns of the contract...
-                      </span>
-                    </li>
-                    <li>
-                      <span className="address-modal-list-tag">Issue:</span>
-                      <span className="address-modal-list-text">
-                        No access control is implemented. Currently, any user
-                        can...
-                      </span>
-                    </li>
-                    <li>
-                      <span className="address-modal-list-tag">Fix:</span>
-                      <span className="address-modal-list-text">
-                        Implement an access control mechanism such as
-                        OpenZeppelin's...
-                      </span>
-                    </li>
+                    { audit.findings?.issues.map((item, key) => (
+                      <li key={ `issue-${ key }` }>
+                        <span className="address-modal-list-tag">
+                          ISSUE:
+                        </span>
+                        <span className="address-modal-list-text">
+                          { item }
+                        </span>
+                      </li>
+                    )) }
+                    { audit.findings?.fixes.map((item, key) => (
+                      <li key={ `fix-${ key }` }>
+                        <span className="address-modal-list-tag">
+                          FIX:
+                        </span>
+                        <span className="address-modal-list-text">
+                          { item }
+                        </span>
+                      </li>
+                    )) }
+                    { audit.findings?.bestPractices.map((item, key) => (
+                      <li key={ `best-practice-${ key }` }>
+                        <span className="address-modal-list-tag">
+                          BEST PRACTICE:
+                        </span>
+                        <span className="address-modal-list-text">
+                          { item }
+                        </span>
+                      </li>
+                    )) }
                   </ul>
                 </li>
               </ul>
